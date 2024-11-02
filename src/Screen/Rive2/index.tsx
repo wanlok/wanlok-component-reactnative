@@ -1,6 +1,7 @@
 import {StyleSheet, View} from 'react-native';
 import Rive, {RiveRef} from 'rive-react-native';
-import {useRef} from 'react';
+import {useEffect, useRef} from 'react';
+import useFetch from './UseFetch';
 
 const styles = StyleSheet.create({
   container: {},
@@ -8,6 +9,15 @@ const styles = StyleSheet.create({
 
 const Screen = () => {
   const riveRef = useRef<RiveRef>(null);
+
+  const {htmlString, loading, error} = useFetch(
+    'http://www.google.com',
+    riveRef,
+  );
+
+  // useEffect(() => {
+  //   riveRef?.current?.play();
+  // }, []);
 
   return (
     <View style={styles.container}>
