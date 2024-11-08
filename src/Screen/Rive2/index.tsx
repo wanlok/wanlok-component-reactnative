@@ -1,7 +1,7 @@
 import {StyleSheet, View} from 'react-native';
 import Rive, {RiveRef} from 'rive-react-native';
-import {useEffect, useRef} from 'react';
-import useFetch from './UseFetch';
+import {RefObject, useCallback, useEffect, useRef} from 'react';
+// import useFetch from './UseFetch';
 
 const styles = StyleSheet.create({
   container: {},
@@ -10,14 +10,22 @@ const styles = StyleSheet.create({
 const Screen = () => {
   const riveRef = useRef<RiveRef>(null);
 
-  const {htmlString, loading, error} = useFetch(
-    'http://www.google.com',
-    riveRef,
-  );
+  const callback = useCallback((node: RefObject<RiveRef>) => {
+    // if (node !== null) {
+    node?.current?.play();
+    // }
+  }, []);
+
+  // const {htmlString, loading, error} = useFetch(
+  //   'http://www.google.com',
+  //   riveRef,
+  // );
 
   // useEffect(() => {
   //   riveRef?.current?.play();
-  // }, []);
+  // }, [riveRef?.current]);
+
+  // callback(riveRef);
 
   return (
     <View style={styles.container}>

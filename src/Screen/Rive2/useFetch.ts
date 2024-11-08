@@ -14,7 +14,6 @@ const useFetch = (urlString: string, riveRef: RefObject<RiveRef>) => {
         }
         const result = await response.text();
         setHtmlString(result);
-        riveRef.current?.play();
       } catch (error) {
         setError(`${error}`);
       } finally {
@@ -23,6 +22,15 @@ const useFetch = (urlString: string, riveRef: RefObject<RiveRef>) => {
     };
     fetchHTMLString();
   }, [urlString]);
+
+  // setTimeout(() => {
+  riveRef.current?.play();
+  // }, 500);
+
+  // useEffect(() => {
+  //   riveRef?.current?.play();
+  // }, [riveRef?.current]);
+
   return {htmlString, loading, error};
 };
 
