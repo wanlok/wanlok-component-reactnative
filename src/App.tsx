@@ -4,6 +4,10 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Landing from './Screen/Landing';
 import Page1 from './Screen/Page1';
 import Rive2 from './Screen/Rive2';
+import {
+  LDProvider,
+  ReactNativeLDClient,
+} from '@launchdarkly/react-native-client-sdk';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
