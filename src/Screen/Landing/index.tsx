@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const HomeScreen = ({
+const Page1 = ({
   navigation,
 }: {
   navigation: NativeStackNavigationProp<RootStackParamList>;
@@ -63,4 +63,4 @@ const HomeScreen = ({
   );
 };
 
-export default HomeScreen;
+export default Page1;
