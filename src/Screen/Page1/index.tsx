@@ -1,23 +1,14 @@
-import {StyleSheet, Text, View} from 'react-native';
-import {Component, createRef} from 'react';
-import Rive, {RiveRef} from 'rive-react-native';
+import React, {Component, createRef} from 'react';
+import {Provider} from 'react-redux';
+import {store} from './ReduxStore';
+import Dummy from './Dummy';
 
-const styles = StyleSheet.create({
-  container: {},
-});
+const Page1 = () => {
+  return (
+    <Provider store={store}>
+      <Dummy />
+    </Provider>
+  );
+};
 
-class Screen extends Component {
-  constructor(props: any) {
-    super(props);
-  }
-
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text>Hello World</Text>
-      </View>
-    );
-  }
-}
-
-export default Screen;
+export default Page1;

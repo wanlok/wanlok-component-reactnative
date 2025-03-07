@@ -4,10 +4,7 @@ import {createNativeStackNavigator} from '@react-navigation/native-stack';
 import Landing from './Screen/Landing';
 import Page1 from './Screen/Page1';
 import Rive2 from './Screen/Rive2';
-import {
-  LDProvider,
-  ReactNativeLDClient,
-} from '@launchdarkly/react-native-client-sdk';
+import VideoPlayer from './Screen/VideoPlayer';
 
 const Stack = createNativeStackNavigator<RootStackParamList>();
 
@@ -15,6 +12,7 @@ export type RootStackParamList = {
   Landing: undefined;
   Page1: undefined;
   Rive2: undefined;
+  VideoPlayer: undefined;
 };
 
 export const screens: {
@@ -29,6 +27,10 @@ export const screens: {
     name: 'Rive 2',
     screen: 'Rive2',
   },
+  {
+    name: 'Video Player',
+    screen: 'VideoPlayer',
+  },
 ];
 
 const App = () => {
@@ -38,6 +40,7 @@ const App = () => {
         <Stack.Screen name="Landing" component={Landing} />
         <Stack.Screen name="Page1" component={Page1} />
         <Stack.Screen name="Rive2" component={Rive2} />
+        <Stack.Screen name="VideoPlayer" component={VideoPlayer} />
       </Stack.Navigator>
     </NavigationContainer>
   );
